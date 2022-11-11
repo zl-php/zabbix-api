@@ -24,6 +24,19 @@ composer require zuogechengxu/zabbix
 
 ## 使用
 
+### 初始化
+``` php
+use Zuogechengxu\Zabbix\Application;
+
+$zbx_config = [
+    'zabUrl' => 'http://xxx.xx.xx.xx',
+    'zabUser' => 'Admin',
+    'zabPassword' => 'zabbix'
+];
+
+$app = new Application($zbx_config);
+```
+
 
 ## 说明
 
