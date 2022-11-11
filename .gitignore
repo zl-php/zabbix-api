@@ -24,3 +24,5 @@ Homestead.json
 
 /.idea
 /.vscode
+
+composer.lock
