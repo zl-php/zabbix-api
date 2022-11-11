@@ -37,6 +37,35 @@ $zbx_config = [
 $app = new Application($zbx_config);
 ```
 
+### 获取用户令牌（user.login）
+``` php
+use Zuogechengxu\Zabbix\Application;
+
+# 获取用户令牌，返回数组，设置了缓存2小时
+$token = $app->auth_token->getAuthToken();
+
+# 刷新令牌
+$app->auth_token->refresh()
+
+# 获取zabbix api版本，返回字符串
+$version = $app->auth_token->getApiVersion();
+```
+
+### 调用其他api，示例
+``` php
+use Zuogechengxu\Zabbix\Application;
+
+# 使用以下方法可以直接调用 Zabbix 任意 API，该方法默认自动处理了用户令牌逻辑，以获取主机为例。
+$params = [
+    "filter" => ["host" => ['Zabbix server']]
+];
+
+# 返回数据
+$host = $app->rpc->call('host.get', $params)
+
+# 返回原始 response 对象
+$host = $app->rpc->call('host.get', $params, true)
+```
 
 ## 说明
 
