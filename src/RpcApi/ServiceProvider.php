@@ -11,12 +11,12 @@ class ServiceProvider implements ServiceProviderInterface
      */
     public function register(Container $app)
     {
-        isset($app['rpc']) || $app['rpc'] = function ($app) {
-            return new Client($app);
-        };
-
         isset($app['auth_token']) || $app['auth_token'] = function ($app) {
             return new AuthToken($app);
+        };
+
+        isset($app['rpc']) || $app['rpc'] = function ($app) {
+            return new Rpc($app);
         };
     }
 }

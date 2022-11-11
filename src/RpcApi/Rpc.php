@@ -3,7 +3,7 @@ namespace Zuogechengxu\Zabbix\RpcApi;
 
 use Zuogechengxu\Zabbix\Kernel\BaseClient;
 
-class Client extends BaseClient
+class Rpc extends BaseClient
 {
    public function call(string $method, array $params = [], bool $returnRaw = false)
    {

@@ -4,7 +4,7 @@
 # @File   : ConfigServiceProvider.php
 namespace Zuogechengxu\Zabbix\Kernel\Providers;
 
-use App\Services\Kernel\Config;
+use Zuogechengxu\Zabbix\Kernel\Config;
 use Pimple\Container;
 use Pimple\ServiceProviderInterface;
 
